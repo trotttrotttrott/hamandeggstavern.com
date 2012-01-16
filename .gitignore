@@ -1,6 +1,4 @@
-config/active_merchant.yml
-config/settings.yml
-config/newrelic.yml
+config/database.yml
 log/*.log
 tmp/**/*
 .DS_Store
