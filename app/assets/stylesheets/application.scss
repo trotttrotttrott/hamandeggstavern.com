@@ -1,0 +1,22 @@
+/*
+ *= require reset
+ *= require_self
+ *= require_tree .
+*/
+
+@import 'imports/defaults';
+
+html {
+  font: normal 12px/16px;
+  font-family: 'Lucinda Grande', 'Helvetica Neue', Verdana, Arial, sans-serif;
+  color: $color;
+}
+
+a {
+  color: $link_color;
+  text-decoration: none;
+
+  &:hover {
+    color: $link_hover_color;
+  }
+}
