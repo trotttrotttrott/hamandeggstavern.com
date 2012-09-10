@@ -39,6 +39,7 @@ input[type=text], input[type=password] {
   width: 240px;
   height: 35px;
   font-size: 16px;
+  outline: none;
 
   &:focus {
     border-color: #ccc;
