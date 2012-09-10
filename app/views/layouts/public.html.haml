@@ -1,0 +1,15 @@
+!!! 5
+%html
+  %head
+
+    %title= @title
+    %meta{:name => "description", :content => @description}
+    %meta{:name => "keywords", :content => @metatags}
+
+    = stylesheet_link_tag 'public'
+    = javascript_include_tag 'public'
+    = csrf_meta_tags
+
+  %body
+    #central=yield
+    = render 'layouts/public/south'

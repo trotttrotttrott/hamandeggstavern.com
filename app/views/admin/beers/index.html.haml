@@ -1,0 +1,19 @@
+%h1 Listing beers
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Percentage of Alcohol
+    %th
+    %th
+    %th
+  - @beers.each do |beer|
+    %tr
+      %td= beer.name
+      %td= beer.description
+      %td= beer.percentage_of_alcohol
+      %td= link_to 'Show', admin_beer_path(beer)
+      %td= link_to 'Edit', edit_admin_beer_path(beer)
+      %td= link_to 'Destroy', admin_beer_path(beer), confirm: 'Are you sure?', method: :delete
+%br/
+= link_to 'New Beer', new_admin_beer_path

@@ -1,5 +1,6 @@
-config/database.yml
-log/*.log
-tmp/**/*
+/config/database.yml
+/log/*.log
+/tmp/**/*
+/tmp/*
+/coverage/*
 .DS_Store
-tmp/*

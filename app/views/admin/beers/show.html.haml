@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %b Name:
+  = @beer.name
+%p
+  %b Description:
+  = @beer.description
+%p
+  %b Percentage of Alcohol:
+  = @beer.percentage_of_alcohol
+= link_to 'Edit', edit_admin_beer_path(@beer)
+|
+\#{link_to 'Back', admin_beers_path}

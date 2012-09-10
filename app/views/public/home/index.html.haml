@@ -1,6 +1,17 @@
-%secion#public_home_index
+#public_home_index
 
-  %h1 Ham and Eggs
+  %table
+    %tr
+      %td
+        = image_tag 'public/home/index/ham_n_eggs_dtla.png', :title => 'Ham \'n Eggs DTLA'
+        .address
+          %div 433 W. 8th Steet
+          %div Los Angeles, CA 90014
 
-  %p Yar!
+        = render :partial => 'public/home/index/form'
 
+        #loader
+
+  %table#boom
+    %tr
+      %td BOOM!!!

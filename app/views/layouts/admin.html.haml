@@ -1,0 +1,22 @@
+!!! 5
+%html
+  %head
+
+    %title boobies
+
+    = stylesheet_link_tag 'admin'
+    = javascript_include_tag 'admin'
+    = csrf_meta_tags
+
+  %body
+    #north
+      %ul
+        %li= link_to 'home', admin_root_path
+        %li= link_to 'patrons', admin_patrons_path
+        %li= link_to 'beers', admin_beers_path
+      %ul
+        %li
+          %span= current_admin.email
+        %li= link_to 'Sign out', destroy_admin_session_path, :method => :delete
+
+    #central=yield

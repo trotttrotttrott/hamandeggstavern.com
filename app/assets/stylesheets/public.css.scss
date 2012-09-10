@@ -1,0 +1,73 @@
+@import 'compass';
+@import 'compass/reset';
+
+@import 'layouts/public/south';
+
+@import 'public/home/index';
+
+@include font-face('AppleGaramond', font-files('/fonts/applegaramond-webfont.ttf', '/fonts/applegaramond-webfont.woff', '/fonts/applegaramond-webfont.svg'), '/fonts/applegaramond-webfont.eot');
+@include font-face('AppleGaramond-Italic', font-files('/fonts/applegaramond-italic-webfont.ttf', '/fonts/applegaramond-italic-webfont.woff', '/fonts/applegaramond-italic-webfont.svg'), '/fonts/applegaramond-italic-webfont.eot');
+@include font-face('AppleGaramond-Bold', font-files('/fonts/applegaramond-bold-webfont.ttf', '/fonts/applegaramond-bold-webfont.woff', '/fonts/applegaramond-bold-webfont.svg'), '/fonts/applegaramond-bold-webfont.eot');
+@include font-face('AppleGaramond-BoldItalic', font-files('/fonts/applegaramond-bolditalic-webfont.ttf', '/fonts/applegaramond-bolditalic-webfont.woff', '/fonts/applegaramond-bolditalic-webfont.svg'), '/fonts/applegaramond-bolditalic-webfont.eot');
+@include font-face('AppleGaramond-Light', font-files('/fonts/applegaramond-light-webfont.ttf', '/fonts/applegaramond-light-webfont.woff', '/fonts/applegaramond-light-webfont.svg'), '/fonts/applegaramond-light-webfont.eot');
+@include font-face('AppleGaramond-LightItalic', font-files('/fonts/applegaramond-lightitalic-webfont.ttf', '/fonts/applegaramond-lightitalic-webfont.woff', '/fonts/applegaramond-lightitalic-webfont.svg'), '/fonts/applegaramond-lightitalic-webfont.eot');
+@include font-face('Miniver', font-files('/fonts/miniver-regular-webfont.ttf', '/fonts/miniver-regular-webfont.woff', '/fonts/miniver-regular-webfont.svg'), '/fonts/miniver-regular-webfont.eot');
+
+html, button, input, textarea, select {
+  font-family: 'AppleGaramond';
+  font-size: 14px;
+}
+
+body {
+  background: asset-url('layouts/public/wallpaper.png', image) center top;
+}
+
+html, body, #central {
+  height: 100%;
+}
+
+button, input[type=submit] {
+  cursor: pointer;
+  cursor: hand;
+}
+
+input[type=text], input[type=password] {
+  @include border-radius(10px);
+  @include background-image(linear-gradient(#f1f1f1, #fff));
+  border: 1px solid #ddd;
+  padding: 0 10px;
+  width: 240px;
+  height: 35px;
+  font-size: 16px;
+
+  &:focus {
+    border-color: #ccc;
+  }
+}
+
+input[type=submit] {
+  @include border-radius(10px);
+  background: #000;
+  border: 1px solid #000;
+  color: #fff;
+  padding: 0 10px;
+  height: 35px;
+
+  &:hover {
+    @include background-image(linear-gradient(#000, #666));
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+
+  &:hover {
+    color: #ccc;
+  }
+}
+
+.validation_errors {
+  color: #ff0099;
+  line-height: 20px;
+}

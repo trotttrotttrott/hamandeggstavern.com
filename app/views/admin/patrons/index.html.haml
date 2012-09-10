@@ -1,0 +1,19 @@
+%h1 Listing admin_patrons
+
+%table
+  %tr
+    %th Email
+    %th
+    %th
+    %th
+
+  - @admin_patrons.each do |admin_patron|
+    %tr
+      %td= admin_patron.email
+      %td= link_to 'Show', admin_patron_path(admin_patron)
+      %td= link_to 'Edit', edit_admin_patron_path(admin_patron)
+      %td= link_to 'Destroy', admin_patron_path(admin_patron), method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Patron', new_admin_patron_path
