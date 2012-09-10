@@ -1,7 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'rails'
-gem 'mysql2'
+gem 'mysql2' # easy for local
+gem 'pg'     # for heroku
 
 gem 'devise'
 
