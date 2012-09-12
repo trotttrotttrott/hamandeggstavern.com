@@ -11,6 +11,8 @@ gem 'haml-rails'
 
 gem 'jquery-rails'
 
+gem 'thin'
+
 group :assets do
   gem 'sprockets'
   gem 'sass-rails'
