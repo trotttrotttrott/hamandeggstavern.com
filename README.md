@@ -1,7 +1,10 @@
-Ham and Eggs
-============
+# Ham and Eggs
 
 Yar!
+
+To run thar app, type "foreman start" in thy terminal winder!
+
+Freak hoes!
 
 ---------------------------------------------------------------------------------
 

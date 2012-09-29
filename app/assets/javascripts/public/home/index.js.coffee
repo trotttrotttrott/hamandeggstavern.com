@@ -8,6 +8,3 @@ $ ->
     $('#loader').hide()
     $('form#new_patron').replaceWith xhr.responseText
     $('form#new_patron').find('input[type=text]').select()
-    if xhr.status == 200
-      $('#boom').fadeIn 50, ->
-        $(this).fadeOut 1500

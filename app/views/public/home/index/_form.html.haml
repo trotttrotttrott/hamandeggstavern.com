@@ -1,7 +1,7 @@
 = form_for @patron, :url => patrons_path, :method => :post, :remote => true, :html => { :id => 'new_patron' } do |f|
   .notice
     - if @patron.persisted?
-      You'll here from us soon...
+      Boom! You'll here from us soon...
     - else
       First drink is on us!
   = f.text_field :email, :placeholder => 'Email address', :autofocus => true, :value => (@patron.persisted? ? '' : @patron.email)
