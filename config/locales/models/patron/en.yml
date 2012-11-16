@@ -1,0 +1,15 @@
+en:
+  activerecord:
+    models:
+      patron: 'Patron'
+    attributes:
+      patron:
+        email: ''
+    errors:
+      models:
+        patron:
+          attributes:
+            email:
+              blank: 'Please enter an email address.'
+              taken: 'We already have this email address, try another.'
+              invalid: 'Incorrect email format.'

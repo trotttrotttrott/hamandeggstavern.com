@@ -1,0 +1,36 @@
+#north {
+
+  ul {
+    position: absolute;
+    right: 200px;
+
+    li {
+      float: left;
+
+      a {
+        display: block;
+        background: #000;
+
+        &.twitter {
+          padding: 18px 10px;
+          margin-right: 10px;
+        }
+
+        &.facebook {
+          padding: 13px;
+        }
+
+        &:hover {
+
+          &.twitter {
+            padding: 28px 10px;
+          }
+
+          &.facebook {
+            padding: 23px 13px;
+          }
+        }
+      }
+    }
+  }
+}

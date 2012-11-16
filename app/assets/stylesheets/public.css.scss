@@ -1,6 +1,7 @@
 @import 'compass';
 @import 'compass/reset';
 
+@import 'layouts/public/north';
 @import 'layouts/public/south';
 
 @import 'public/home/index';
@@ -12,10 +13,18 @@
 @include font-face('AppleGaramond-Light', font-files('/fonts/applegaramond-light-webfont.ttf', '/fonts/applegaramond-light-webfont.woff', '/fonts/applegaramond-light-webfont.svg'), '/fonts/applegaramond-light-webfont.eot');
 @include font-face('AppleGaramond-LightItalic', font-files('/fonts/applegaramond-lightitalic-webfont.ttf', '/fonts/applegaramond-lightitalic-webfont.woff', '/fonts/applegaramond-lightitalic-webfont.svg'), '/fonts/applegaramond-lightitalic-webfont.eot');
 @include font-face('Miniver', font-files('/fonts/miniver-regular-webfont.ttf', '/fonts/miniver-regular-webfont.woff', '/fonts/miniver-regular-webfont.svg'), '/fonts/miniver-regular-webfont.eot');
+@include font-face('OpenSans-SemiBold', font-files('/fonts/opensans-semibold-webfont.ttf', '/fonts/opensans-semibold-webfont.woff', '/fonts/opensans-semibold-webfont.svg'), '/fonts/opensans-semibold-webfont.eot');
 
 html, button, input, textarea, select {
-  font-family: 'AppleGaramond';
   font-size: 14px;
+}
+
+html {
+  font-family: 'AppleGaramond';
+}
+
+button, input, textarea, select {
+  font-family: 'OpenSans-SemiBold';
 }
 
 body {
@@ -38,7 +47,6 @@ input[type=text], input[type=password] {
   padding: 0 10px;
   width: 240px;
   height: 35px;
-  font-size: 16px;
   outline: none;
 
   &:focus {
