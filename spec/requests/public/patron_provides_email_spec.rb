@@ -6,9 +6,6 @@ describe 'Patron provides email' do
     visit root_path
     fill_in 'patron_email', :with => 'bobfarty@smelly.org'
     click_button 'Send'
-    page.should have_content %q(You'll here from us soon...)
-  end
-
-  it 'should be rejected if an invalid email is provided' do
+    page.should have_content %q(Thanks! We look forward to seeing you.)
   end
 end
