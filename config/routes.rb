@@ -13,4 +13,8 @@ HamAndEggs::Application.routes.draw do
     resources :beers
     resources :patrons
   end
+
+  namespace :web_hook do
+    get :mail_chimp, :to => 'mail_chimp#receiver'
+  end
 end
