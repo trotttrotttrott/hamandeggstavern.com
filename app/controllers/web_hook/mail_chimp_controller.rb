@@ -32,11 +32,11 @@ class WebHook::MailChimpController < ApplicationController
   end
 
   def subscribe
-    return unless !!params[:data][:email]
-    Patron.find_or_create_by_email(params[:data][:email].downcase,
-                                   :first_name => params[:data][:merges][:FNAME],
-                                   :last_name => params[:data][:merges][:LNAME],
-                                   :mail_is_subscribed => true)
+    patron = Patron.find_by_email(params[:data][:email]) || Patron.new(:email => params[:data][:email])
+    patron.first_name = params[:data][:merges][:FNAME] unless params[:data][:merges][:FNAME].blank?
+    patron.last_name = params[:data][:merges][:FNAME] unless params[:data][:merges][:LNAME].blank?
+    patron.mail_is_subscribed = true
+    patron.save!
   end
 
   def unsubscribe
