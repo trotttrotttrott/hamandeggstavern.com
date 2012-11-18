@@ -32,7 +32,8 @@ class WebHook::MailChimpController < ApplicationController
   end
 
   def subscribe
-    Patron.find_or_create_by_email(params[:data][:email],
+    return unless !!params[:data][:email]
+    Patron.find_or_create_by_email(params[:data][:email].downcase,
                                    :first_name => params[:data][:merges][:FNAME],
                                    :last_name => params[:data][:merges][:LNAME],
                                    :mail_is_subscribed => true)
