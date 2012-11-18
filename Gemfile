@@ -11,6 +11,8 @@ gem 'jquery-rails'
 
 gem 'thin'
 
+gem 'gibbon' # mail chimp api wrapper
+
 group :assets do
   gem 'sprockets'
   gem 'sass-rails'
