@@ -18,8 +18,8 @@ describe WebHook::MailChimpController do
           EMAIL: patron.email,
           FNAME: Faker::Name.first_name,
           LNAME: Faker::Name.last_name,
-          INTERESTS: "Group1,Group2",
-          ip_opt: Faker::Internet.ip_v4_address } } }
+          INTERESTS: "Group1,Group2" },
+        ip_opt: Faker::Internet.ip_v4_address } }
 
     get :receiver, profile_update_params
 
@@ -43,5 +43,31 @@ describe WebHook::MailChimpController do
 
     patron.reload
     patron.email.should eq(email_update_params[:data][:new_email])
+  end
+
+  it 'should create a patron on subscribe requests' do
+
+    email = Faker::Internet.email
+
+    subscribe_params = {
+      type: "subscribe",
+      fired_at: "2009-03-26 21:35:57",
+      data: {
+        id: "8a25ff1d98",
+        list_id: "a6b5da1054",
+        email: email,
+        email_type: "html",
+        merges: {
+          EMAIL: email,
+          FNAME: Faker::Name.first_name,
+          LNAME: Faker::Name.first_name,
+          INTERESTS: "Group1,Group2"
+        },
+        ip_opt: "10.20.10.30",
+        ip_signup: "10.20.10.30" } }
+
+    get :receiver, subscribe_params
+
+    Patron.find_by_email(email).nil?.should_not eq(nil)
   end
 end
