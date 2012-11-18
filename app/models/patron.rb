@@ -7,6 +7,10 @@ class Patron < ActiveRecord::Base
 
   after_create :post_to_mailchimp
 
+  def self.find_by_email(email)
+    where('lower(email) = ?', email.downcase).first
+  end
+
   private
 
   def post_to_mailchimp
