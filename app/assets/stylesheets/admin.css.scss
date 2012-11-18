@@ -1,0 +1,18 @@
+@import 'compass';
+@import 'compass/reset';
+
+@include font-face('AppleGaramond', font-files('/fonts/applegaramond-webfont.ttf', '/fonts/applegaramond-webfont.woff', '/fonts/applegaramond-webfont.svg'), '/fonts/applegaramond-webfont.eot');
+
+@import 'layouts/admin/north';
+
+html {
+  font-family: 'AppleGaramond';
+}
+
+h1 {
+  font-size: 40px;
+}
+
+table {
+  width: 100%;
+}
