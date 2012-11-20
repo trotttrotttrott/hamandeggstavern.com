@@ -4,6 +4,8 @@
       Thanks! We look forward to seeing you.
     - else
       First drink is on us!
-  = f.text_field :email, :placeholder => 'Email address', :autofocus => true, :value => (@patron.persisted? ? '' : @patron.email)
-  = f.submit 'Send'
+  %table
+    %tr
+      %td= f.text_field :email, :placeholder => 'Email address', :autofocus => true, :value => (@patron.persisted? ? '' : @patron.email)
+      %td= f.submit 'Send'
   = validation_errors @patron

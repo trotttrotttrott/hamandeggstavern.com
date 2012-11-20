@@ -32,12 +32,20 @@
           margin: 30px 0 15px;
         }
 
-        .field_with_errors {
-          display: inline;
-        }
+        table {
+          width: 328px;
+          margin: 0 auto;
 
-        input[type=text] {
-          margin-right: 5px;
+          td {
+
+            .field_with_errors {
+              display: inline;
+            }
+
+            input[type=text] {
+              margin-right: 5px;
+            }
+          }
         }
       }
 
@@ -55,19 +63,6 @@
         background: asset-url('public/home/index/loader.gif', image) no-repeat center;
         margin-top: 15px;
       }
-    }
-  }
-
-  table#boom {
-    position: absolute;
-    top: 0;
-    font-size: 200px;
-    font-family: 'AppleGaramond-Bold';
-    background: #fff;
-    display: none;
-
-    td {
-      padding-bottom: 80px;
     }
   }
 }
