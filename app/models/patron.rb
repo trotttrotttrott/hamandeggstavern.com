@@ -6,7 +6,7 @@ class Patron < ActiveRecord::Base
             :uniqueness => true
 
   before_validation :downcase_email
-  after_create :post_to_mailchimp
+  after_create :post_to_mailchimp!
 
   def self.find_by_email(email)
     where('lower(email) = ?', email.downcase).first
@@ -18,7 +18,7 @@ class Patron < ActiveRecord::Base
     self.email = self.email.downcase if self.email.present?
   end
 
-  def post_to_mailchimp
+  def post_to_mailchimp!
     MailChimpService.list_subscribe(self)
   end
 end

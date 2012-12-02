@@ -1,6 +1,6 @@
 class BaseService
 
-  private
+  protected
 
   def transaction
     ActiveRecord::Base.transaction do
