@@ -30,7 +30,6 @@ group :development, :test do
   gem 'ffaker'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
-  gem 'capistrano'
   gem 'spork'
   gem 'simplecov', :require => false
   gem 'simplecov-rcov', :require => false
