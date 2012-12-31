@@ -8,5 +8,6 @@ class Public::BaseController < ApplicationController
     @title = "Ham and Eggs"
     @metatags = "bar, restaurant, music, radical, magical, fuckin cool"
     @description = "Ham and Eggs is pretty much the coolest place you can go to drink and eat in Los Angeles"
+    @canonical = request.url
   end
 end
