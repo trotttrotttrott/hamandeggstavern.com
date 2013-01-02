@@ -6,8 +6,8 @@ class Public::BaseController < ApplicationController
 
   def metadata
     @title = "Ham and Eggs"
-    @metatags = "bar, restaurant, music, radical, magical, fuckin cool"
-    @description = "Ham and Eggs is pretty much the coolest place you can go to drink and eat in Los Angeles"
+    @metatags = "bar, restaurant, music, radical, magical, fuckin cool, wine bar, venue, private party, tavern, beer, cheap beer, cheap drinks, cheap, friendly, attractive, downtown, dtla, los angeles, happy hour, hip, cool, trendy, hipster, fun, dance, party, david deluca, davin sanchez"
+    @description = "A friendly place to gather"
     @canonical = request.url
   end
 end
