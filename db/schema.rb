@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(:version => 20121118173916) do
   create_table "beer_classifications", :force => true do |t|
     t.string   "name"
     t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "beers", :force => true do |t|
@@ -45,14 +45,14 @@ ActiveRecord::Schema.define(:version => 20121118173916) do
     t.string   "image"
     t.integer  "producer_id"
     t.integer  "beer_classification_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
   end
 
   create_table "patrons", :force => true do |t|
     t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
     t.string   "first_name"
     t.string   "last_name"
     t.datetime "mail_list_subscribe_posted_at"
@@ -62,8 +62,8 @@ ActiveRecord::Schema.define(:version => 20121118173916) do
   create_table "producers", :force => true do |t|
     t.string   "name"
     t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "wines", :force => true do |t|
@@ -73,8 +73,8 @@ ActiveRecord::Schema.define(:version => 20121118173916) do
     t.integer  "points"
     t.string   "image"
     t.integer  "producer_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
 end
