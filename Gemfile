@@ -9,9 +9,12 @@ gem 'haml-rails'
 
 gem 'jquery-rails'
 
-gem 'thin'
+gem 'puma'
+gem 'foreman'
 
 gem 'gibbon' # mail chimp api wrapper
+
+gem 'spotify' # ruby bindings for libspotify
 
 group :assets do
   gem 'sprockets'
