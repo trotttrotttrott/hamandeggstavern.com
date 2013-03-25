@@ -19,6 +19,7 @@ gem 'spotify' # ruby bindings for libspotify
 group :assets do
   gem 'sprockets'
   gem 'sass-rails'
+  gem 'compass_twitter_bootstrap'
   gem 'compass-rails'
   gem 'coffee-rails'
   gem 'uglifier'

@@ -1,23 +1,14 @@
 #north {
-  overflow: hidden;
-  margin-bottom: 20px;
-  background: #f7f7f7;
-  padding: 10px 0;
-  border-bottom: 1px solid #ccc;
+  margin-top: 20px;
 
   ul {
 
-    &:first-child {
-      float: left;
-    }
-
-    & + ul {
-      float: right;
-    }
-
     li {
-      display: inline;
-      margin: 0 10px;
+
+      span {
+        display: block;
+        margin: 10px 15px;
+      }
     }
   }
 }

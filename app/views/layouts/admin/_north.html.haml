@@ -1,9 +1,17 @@
 #north
-  %ul
-    %li= link_to 'home', admin_root_path
-    %li= link_to 'patrons', admin_patrons_path
-    %li= link_to 'beers', admin_beers_path
-  %ul
-    %li
-      %span= current_admin.email
-    %li= link_to 'Sign out', destroy_admin_session_path, :method => :delete
+  .navbar
+    .navbar-inner
+
+      = link_to 'GOHAM', admin_root_path, :class => 'brand'
+
+      %ul.nav
+        %li.divider-vertical
+        %li= link_to 'patrons', admin_patrons_path
+        %li.divider-vertical
+        %li= link_to 'beers', admin_beers_path
+
+      %ul.nav.pull-right
+        %li
+          %span= current_admin.email
+        %li.divider-vertical
+        %li= link_to 'Sign out', destroy_admin_session_path, :method => :delete
