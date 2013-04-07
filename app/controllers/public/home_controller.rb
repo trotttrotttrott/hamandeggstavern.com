@@ -3,7 +3,7 @@ class Public::HomeController < Public::BaseController
   def index
     @patron = Patron.new
     facebook_service = FacebookService.new
-    @track_set = facebook_service.music_listens
+    @tracks = facebook_service.music_listens
   end
 
   def create

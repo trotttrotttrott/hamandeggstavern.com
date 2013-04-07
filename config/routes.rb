@@ -12,6 +12,7 @@ HamAndEggs::Application.routes.draw do
     root :to => 'dashboard#index'
     resources :beers
     resources :patrons, :only => [:index]
+    resources :integrations, :only => [:index]
   end
 
   namespace :web_hook do

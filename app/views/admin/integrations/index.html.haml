@@ -1,0 +1,15 @@
+%h1 integrations  <small>#{@integrations.size}</small>
+
+%table.table
+  %tr
+    %th Admin
+    %th Token
+    %th Type
+    %th Last updated
+
+  - @integrations.each do |integration|
+    %tr
+      %td= integration.admin.email
+      %td= integration.token.truncate 20
+      %td= integration.type
+      %td= integration.updated_at
