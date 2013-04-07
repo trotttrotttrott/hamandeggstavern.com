@@ -1,0 +1,11 @@
+#spotify
+
+  %p Recent Tracks
+
+  %ul
+
+    - @track_set.each do |track|
+
+      %li
+
+        %iframe{ :src => "https://embed.spotify.com/?uri=spotify:track:#{track}", :width => '300', :height => '380', :frameborder => '0', :allowtransparency => 'true' }

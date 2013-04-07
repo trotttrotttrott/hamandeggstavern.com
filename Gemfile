@@ -14,8 +14,6 @@ gem 'foreman'
 
 gem 'gibbon' # mail chimp api wrapper
 
-gem 'spotify' # ruby bindings for libspotify
-
 group :assets do
   gem 'sprockets'
   gem 'sass-rails'

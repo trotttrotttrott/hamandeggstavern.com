@@ -1,6 +1,7 @@
 @import 'compass';
 @import 'compass/reset';
 
+@import 'layouts/public/central';
 @import 'layouts/public/north';
 @import 'layouts/public/south';
 
@@ -29,10 +30,6 @@ button, input, textarea, select {
 
 body {
   background: asset-url('layouts/public/wallpaper.png', image) center top;
-}
-
-html, body, #central {
-  height: 100%;
 }
 
 button, input[type=submit] {
