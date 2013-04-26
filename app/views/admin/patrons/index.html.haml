@@ -6,9 +6,6 @@
     %th Created at
     %th Updated at
     %th Subscribed to newsletter?
-    -#%th
-    -#%th
-    -#%th
 
   - @admin_patrons.each do |admin_patron|
     %tr
@@ -16,6 +13,3 @@
       %td= admin_patron.created_at.strftime('%c')
       %td= admin_patron.updated_at.strftime('%c')
       %td= admin_patron.mail_is_subscribed?
-      -#%td= link_to 'Show', admin_patron_path(admin_patron)
-      -#%td= link_to 'Edit', edit_admin_patron_path(admin_patron)
-      -#%td= link_to 'Destroy', admin_patron_path(admin_patron), method: :delete, data: { confirm: 'Are you sure?' }

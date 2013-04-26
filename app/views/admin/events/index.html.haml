@@ -1,0 +1,25 @@
+%h1 events <small>#{@events.size}</small>
+
+%table.table
+  %tr
+    %th Name
+    %th From
+    %th To
+    %th Words
+    %th
+    %th
+    %th
+
+  - @events.each do |event|
+    %tr
+      %td= event.name
+      %td= event.from.strftime('%c')
+      %td= event.to.strftime('%c')
+      %td= event.words
+      %td= link_to 'Show', admin_event_path(event)
+      %td= link_to 'Edit', edit_admin_event_path(event)
+      %td= link_to 'Destroy', admin_event_path(event), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Event', new_admin_event_path

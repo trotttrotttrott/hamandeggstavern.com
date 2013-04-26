@@ -63,5 +63,8 @@ module HamAndEggs
     end
 
     config.assets.precompile = [ method(:compile_asset?).to_proc ]
+
+    config.time_zone = 'Pacific Time (US & Canada)'
+    config.active_record.default_timezone = :local
   end
 end
