@@ -10,6 +10,7 @@ HamAndEggs::Application.routes.draw do
 
   namespace :admin do
     root :to => 'dashboard#index'
+    resources :acts
     resources :beers
     resources :events
     resources :integrations, :only => [:index]

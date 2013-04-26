@@ -28,7 +28,7 @@ class Admin::EventsController < Admin::BaseController
   def update
     @event = Event.find(params[:id])
     if @event.update_attributes(params[:event])
-      redirect_to admin_event_path @event, notice: 'Event was successfully updated.'
+      redirect_to admin_events_path, notice: 'Event was successfully updated.'
     else
       render action: 'edit'
     end

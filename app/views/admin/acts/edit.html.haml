@@ -1,0 +1,8 @@
+%h1 Editing act
+
+= form_for @act, :url => admin_act_path(@act) do |f|
+  = render :partial => 'form', :locals => { :f => f }
+
+= link_to 'Show', admin_act_path(@act)
+\|
+= link_to 'Back', admin_acts_path

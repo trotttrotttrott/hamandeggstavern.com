@@ -1,6 +1,7 @@
 %h1 Editing event
 
-= render 'form'
+= form_for @event, :url => admin_event_path(@event) do |f|
+  = render :partial => 'form', :locals => { :f => f }
 
 = link_to 'Show', admin_event_path(@event)
 \|

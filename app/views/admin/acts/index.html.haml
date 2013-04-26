@@ -1,0 +1,21 @@
+%h1 acts <small>#{@acts.size}</small>
+
+%table.table
+  %tr
+    %th Name
+    %th Description
+    %th
+    %th
+    %th
+
+  - @acts.each do |act|
+    %tr
+      %td= act.name
+      %td= act.description
+      %td= link_to 'Show', admin_act_path(act)
+      %td= link_to 'Edit', edit_admin_act_path(act)
+      %td= link_to 'Destroy', admin_act_path(act), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Act', new_admin_act_path

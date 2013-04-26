@@ -1,0 +1,6 @@
+%h1 New act
+
+= form_for @act, :url => admin_acts_path do |f|
+  = render :partial => 'form', :locals => { :f => f }
+
+= link_to 'Back', admin_acts_path
