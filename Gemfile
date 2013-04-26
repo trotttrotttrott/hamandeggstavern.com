@@ -1,17 +1,12 @@
 source 'http://rubygems.org'
 
 gem 'rails'
-
 gem 'devise'
-
 gem 'haml'
 gem 'haml-rails'
-
 gem 'jquery-rails'
-
 gem 'puma'
 gem 'foreman'
-
 gem 'gibbon' # mail chimp api wrapper
 
 group :assets do
@@ -26,15 +21,14 @@ end
 
 group :development, :test do
   gem 'mysql2'
+  gem 'ffaker'
   gem 'debugger'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'ffaker'
+  gem 'capybara-webkit'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'spork'
-  gem 'simplecov', :require => false
-  gem 'simplecov-rcov', :require => false
 end
 
 group :production do

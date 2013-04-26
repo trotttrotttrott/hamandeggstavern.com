@@ -1,9 +1,9 @@
-require 'selenium/webdriver'
+require 'capybara/rspec'
 
-Capybara.register_driver :selenium do |app|
-  Capybara::Selenium::Driver.new app
-end
+Capybara.default_driver = :webkit
+Capybara.javascript_driver = :webkit
+# Capybara.javascript_driver = :webkit_debug
 
 Capybara.configure do |config|
-  config.default_wait_time = 5
+  config.default_wait_time = 2
 end
