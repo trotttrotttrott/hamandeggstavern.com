@@ -44,7 +44,7 @@ Ham.register 'Index::Calendar', (options)->
     if room_for > visible_now
       $(el).show() for el in group_events().right[0..(room_for - visible_now - 1)]
     else
-      return if visible_now == 1
+      room_for = 1 if room_for < 1
       $(el).hide() for el in group_events().center[(visible_now - (visible_now - room_for))..(visible_now - 1)]
 
   show_max_events()
