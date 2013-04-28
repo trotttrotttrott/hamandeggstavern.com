@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'puma'
 gem 'foreman'
 gem 'gibbon' # mail chimp api wrapper
+gem 'chronic' # easy datetime
 
 group :assets do
   gem 'sprockets'

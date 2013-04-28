@@ -10,10 +10,10 @@
   = f.text_field :name
 .field
   = f.label :from
-  = f.datetime_select :from
+  = f.datetime_select :from, :default => Chronic.parse('today at 9:00pm')
 .field
   = f.label :to
-  = f.datetime_select :to
+  = f.datetime_select :to, :default => Chronic.parse('tomorrow at 2:00am')
 .field
   = f.label :words
   = f.text_field :words, :class => 'span12', :maxlength => 255, :placeholder => 'For stuff like "No cover", or "Smell my finger"'
