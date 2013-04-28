@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   attr_accessible :name, :from, :to, :words
   has_many :participations, :class_name => 'EventParticipation'
+  default_scope order('"from" asc')
 
   def participations
     super.by_rank
