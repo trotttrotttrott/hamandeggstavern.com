@@ -8,23 +8,18 @@
         %li= msg
 .field
   = f.label :name
-  %br/
-  = f.text_field :name
+  = f.text_field :name, :autofocus => true
 .field
   = f.label :description
-  %br/
   = f.text_area :description
 -# .field
 -#   = f.label :producer_id
--#   %br/
 -#   = f.number_field :producer_id
 .field
   = f.label :percentage_of_alcohol
-  %br/
   = f.text_field :percentage_of_alcohol
 -# .field
 -#   = f.label :beer_classification_id
--#   %br/
 -#   = f.number_field :beer_classification_id
 .actions
   = f.submit 'Save'
