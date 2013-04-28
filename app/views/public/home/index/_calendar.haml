@@ -3,7 +3,7 @@
     %li.cntrl.past
     - events_visible = 0
     - @events.each do |event|
-      %li{ :style => "#{'display: none;' if event.past? || events_visible > 5}" }
+      %li{ :style => "#{'display: none;' if event.past? || events_visible > 6}" }
         - events_visible += 1
         .day= event.day
         .month_year
