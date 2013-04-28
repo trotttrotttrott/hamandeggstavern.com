@@ -1,0 +1,22 @@
+#calendar
+  %ul
+    %li.cntrl.past
+    - events_visible = 0
+    - @events.each do |event|
+      %li{ :style => "#{'display: none;' if event.past? || events_visible > 5}" }
+        - events_visible += 1
+        .day= event.day
+        .month_year
+          %span= event.month
+          %span= event.year
+        .name= event.name
+        .time_age
+          %span= event.time
+          - unless event.age_restriction.blank?
+            %span= '|'
+            %span= event.age_restriction
+        .words= event.words
+        .acts
+          - event.participations.each do |participation|
+            .act{ :class => "rank_#{participation.act_rank}" }= participation.act.name
+    %li.cntrl.future

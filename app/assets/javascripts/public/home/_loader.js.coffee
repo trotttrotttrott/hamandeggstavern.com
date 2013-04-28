@@ -1,4 +1,4 @@
-$ ->
+Ham.register 'Index::Loader', (options)->
 
   $(document).bind 'ajaxSend', (e, xhr, options)->
     $('#loader').show()

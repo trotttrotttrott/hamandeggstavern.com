@@ -9,3 +9,9 @@
     = render :partial => 'public/home/index/form'
 
     #loader
+
+  = render :partial => 'public/home/index/calendar'
+
+  :coffeescript
+    Ham.start 'Index::Loader'
+    Ham.start 'Index::Calendar', el: $('#calendar')

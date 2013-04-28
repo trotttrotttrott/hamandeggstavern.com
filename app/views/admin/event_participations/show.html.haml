@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Event:
+  = @event_participation.event_id
+%p
+  %b Act:
+  = @event_participation.act_id
+%p
+  %b Act rank:
+  = @event_participation.act_rank
+
+= link_to 'Edit', edit_admin_event_participation_path(@event_participation)
+\|
+= link_to 'Back', admin_event_participations_path

@@ -16,6 +16,9 @@
   = f.datetime_select :to
 .field
   = f.label :words
-  = f.text_area :words
+  = f.text_field :words, :class => 'span12', :maxlength => 255, :placeholder => 'For stuff like "No cover", or "Smell my finger"'
+.field
+  = f.label :age_restriction
+  = f.text_field :age_restriction, :maxlength => 255
 .actions
   = f.submit 'Save'

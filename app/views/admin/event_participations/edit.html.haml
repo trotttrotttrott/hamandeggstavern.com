@@ -1,0 +1,8 @@
+%h1 Editing event_participation
+
+= form_for @event_participation, :url => admin_event_participation_path(@event_participation) do |f|
+  = render :partial => 'form', :locals => { :f => f }
+
+= link_to 'Show', admin_event_participation_path(@event_participation)
+\|
+= link_to 'Back', admin_event_participations_path

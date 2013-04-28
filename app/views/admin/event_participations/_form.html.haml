@@ -1,0 +1,18 @@
+- if @event_participation.errors.any?
+  #error_explanation
+    %h2= "#{pluralize(@event_participation.errors.count, "error")} prohibited this event_participation from being saved:"
+    %ul
+      - @event_participation.errors.full_messages.each do |msg|
+        %li= msg
+
+.field
+  = f.label :event_id
+  = f.select :event_id, options_for_select(@events.map { |event| [event.verbose, event.id] })
+.field
+  = f.label :act_id
+  = f.select :act_id, options_for_select(@acts.map { |act| [act.name, act.id] })
+.field
+  = f.label :act_rank
+  = f.select :act_rank, options_for_select(1..10)
+.actions
+  = f.submit 'Save'

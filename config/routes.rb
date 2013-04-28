@@ -13,6 +13,7 @@ HamAndEggs::Application.routes.draw do
     resources :acts
     resources :beers
     resources :events
+    resources :event_participations
     resources :integrations, :only => [:index]
     resources :patrons, :only => [:index]
   end

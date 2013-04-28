@@ -2,6 +2,7 @@ class Public::HomeController < Public::BaseController
 
   def index
     @patron = Patron.new
+    @events = Event.all
     facebook_service = FacebookService.new
     @tracks = facebook_service.music_listens
   end
