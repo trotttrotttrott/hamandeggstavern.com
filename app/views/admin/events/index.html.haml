@@ -15,8 +15,8 @@
   - @events.each do |event|
     %tr
       %td= event.name
-      %td= event.from.strftime('%c')
-      %td= event.to.strftime('%c')
+      %td= event.start.strftime('%c')
+      %td= event.finish.strftime('%c')
       %td= event.words
       %td= event.age_restriction
       %td

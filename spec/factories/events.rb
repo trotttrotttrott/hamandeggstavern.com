@@ -4,8 +4,8 @@ FactoryGirl.define do
   factory :event do
     name "MyString"
     date "2013-04-20"
-    from "2013-04-20 02:40:58"
-    to "2013-04-20 02:40:58"
-    details "MyString"
+    start "2013-04-20 02:40:58"
+    finish "2013-04-20 02:40:58"
+    words "MyString"
   end
 end
