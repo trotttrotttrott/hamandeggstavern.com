@@ -1,0 +1,60 @@
+#calendar {
+  padding: 50px 0;
+
+  ul {
+
+    li {
+      display: inline-block;
+      vertical-align: top;
+      background: #000;
+      color: #fff;
+      width: 160px;
+      height: 250px;
+      margin: 0 -1px;
+      text-align: left;
+      padding: 5px 10px;
+      line-height: 20px;
+
+      &.cntrl {
+        width: 40px;
+        background: #333 no-repeat center;
+
+        &.past {
+          background-image: asset-url('public/home/index/minus.png', image);
+        }
+
+        &.future {
+          background-image: asset-url('public/home/index/plus.png', image);
+        }
+
+        &:hover {
+          background-color: #555;
+        }
+      }
+
+      .day {
+        font-size: 45px;
+        line-height: normal;
+        margin: -5px 0 -10px;
+      }
+
+      .month_year {
+        font-size: 20px;
+        margin-bottom: 15px;
+        line-height: normal;
+      }
+
+      .name {
+        color: #aaa;
+      }
+
+      .words {
+        margin-bottom: 10px;
+      }
+
+      .acts {
+        font-size: 14px;
+      }
+    }
+  }
+}

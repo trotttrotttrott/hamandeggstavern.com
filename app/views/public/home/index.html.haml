@@ -1,14 +1,8 @@
 #public_home_index
 
-  %div
-    = image_tag 'public/home/index/ham_n_eggs_dtla.png', :title => 'Ham \'n Eggs DTLA'
-    .address
-      %div 433 W. 8th Steet
-      %div Los Angeles, CA 90014
+  = render :partial => 'public/home/index/branding'
 
-    = render :partial => 'public/home/index/form'
-
-    #loader
+  = render :partial => 'public/home/index/form'
 
   = render :partial => 'public/home/index/calendar'
 

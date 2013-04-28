@@ -1,0 +1,14 @@
+#branding {
+  padding-top: 135px;
+
+  & > img:first-child {
+    position: relative;
+    left: 11px;
+  }
+
+  .address {
+    font-family: 'AppleGaramond-Bold';
+    font-size: 18px;
+    margin-top: 10px;
+  }
+}
