@@ -2,6 +2,12 @@
 
   & > div {
     text-align: center;
+
+    .section_heading {
+      font-size: 40px;
+      font-family: 'AppleGaramond-Italic';
+      margin-bottom: 10px;
+    }
   }
 
   @import 'index/branding';
