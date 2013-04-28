@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
   attr_accessible :name, :from, :to, :words
-  has_many :participations, :class_name => 'EventParticipation'
+  has_many :participations, :class_name => 'EventParticipation', :dependent => :destroy
   default_scope order('"from" asc')
 
   def participations
