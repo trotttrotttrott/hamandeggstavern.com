@@ -54,6 +54,13 @@
 
       .acts {
         font-size: 14px;
+
+        .act {
+
+          a {
+            text-decoration: underline;
+          }
+        }
       }
     }
   }

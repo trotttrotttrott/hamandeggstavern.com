@@ -19,5 +19,9 @@
         .words= event.words
         .acts
           - event.participations.each do |participation|
-            .act{ :class => "rank_#{participation.act_rank}" }= participation.act.name
+            .act{ :class => "rank_#{participation.act_rank}" }
+              - if participation.act.url.present?
+                = link_to participation.act.name, participation.act.url, :target => '_blank'
+              - else
+                %span= participation.act.name
     %li.cntrl.future

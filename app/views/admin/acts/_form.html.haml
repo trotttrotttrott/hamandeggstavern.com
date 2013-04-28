@@ -7,9 +7,12 @@
 
 .field
   = f.label :name
-  = f.text_field :name, :autofocus => true
+  = f.text_field :name, :autofocus => true, :placeholder => 'Gnar Kill'
+.field
+  = f.label :url
+  = f.text_field :url, :placeholder => 'http://www.gnarkill.com/'
 .field
   = f.label :description
-  = f.text_area :description, :class => 'span12', :rows => 5
+  = f.text_area :description, :class => 'span12', :rows => 5, :placeholder => 'Gnar Kill is the best band ever...'
 .actions
   = f.submit 'Save'

@@ -3,6 +3,7 @@
 %table.table
   %tr
     %th Name
+    %th URL
     %th Description
     %th
     %th
@@ -11,6 +12,7 @@
   - @acts.each do |act|
     %tr
       %td= act.name
+      %td= act.url
       %td= act.description
       %td= link_to 'Show', admin_act_path(act)
       %td= link_to 'Edit', edit_admin_act_path(act)
