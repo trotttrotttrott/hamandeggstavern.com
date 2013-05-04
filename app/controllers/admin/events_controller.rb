@@ -1,7 +1,7 @@
 class Admin::EventsController < Admin::BaseController
 
   def index
-    @events = Event.all
+    @events = Event.page(params[:page])
   end
 
   def show

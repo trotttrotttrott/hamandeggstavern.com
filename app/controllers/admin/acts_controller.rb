@@ -1,7 +1,7 @@
 class Admin::ActsController < Admin::BaseController
 
   def index
-    @acts = Act.all
+    @acts = Act.page(params[:page])
   end
 
   def show

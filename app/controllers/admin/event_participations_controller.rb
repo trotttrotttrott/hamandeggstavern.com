@@ -1,7 +1,7 @@
 class Admin::EventParticipationsController < Admin::BaseController
 
   def index
-    @event_participations = EventParticipation.all
+    @event_participations = EventParticipation.page(params[:page])
   end
 
   def show

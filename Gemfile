@@ -9,6 +9,7 @@ gem 'puma'
 gem 'foreman'
 gem 'gibbon' # mail chimp api wrapper
 gem 'chronic' # easy datetime
+gem 'kaminari' # pagination
 
 group :assets do
   gem 'sprockets'
