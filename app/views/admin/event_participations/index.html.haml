@@ -1,4 +1,6 @@
-%h1 event participations
+%h1
+  %span event participations
+  = link_to 'New', new_admin_event_participation_path, :class => 'btn btn-primary btn-mini'
 
 = paginate @event_participations
 
@@ -19,7 +21,3 @@
       %td= link_to 'Show', admin_event_participation_path(event_participation)
       %td= link_to 'Edit', edit_admin_event_participation_path(event_participation)
       %td= link_to 'Destroy', admin_event_participation_path(event_participation), :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Event participation', new_admin_event_participation_path

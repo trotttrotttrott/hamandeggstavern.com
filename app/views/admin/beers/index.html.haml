@@ -1,4 +1,7 @@
-%h1 beers <small>#{@beers.size}</small>
+%h1
+  %span beers <small>#{@beers.size}</small>
+  = link_to 'New', new_admin_beer_path, :class => 'btn btn-primary btn-mini'
+
 %table.table
   %tr
     %th Name
@@ -15,5 +18,3 @@
       %td= link_to 'Show', admin_beer_path(beer)
       %td= link_to 'Edit', edit_admin_beer_path(beer)
       %td= link_to 'Destroy', admin_beer_path(beer), confirm: 'Are you sure?', method: :delete
-%br/
-= link_to 'New Beer', new_admin_beer_path

@@ -8,15 +8,21 @@
         %li.divider-vertical
         %li= link_to 'patrons', admin_patrons_path
         %li.divider-vertical
-        %li= link_to 'beers', admin_beers_path
+        %li.dropdown
+          = link_to admin_root_path(:anchor => 'beverage'), 'data-target' => '#', :class => 'dropdown-toggle', 'data-toggle' => 'dropdown' do
+            beverage
+            %b.caret
+          %ul.dropdown-menu{ :role => 'menu', 'aria-labelledby' => 'dLabel' }
+            %li= link_to 'beers', admin_beers_path
         %li.divider-vertical
-        %li= link_to 'integrations', admin_integrations_path
-        %li.divider-vertical
-        %li= link_to 'events', admin_events_path
-        %li.divider-vertical
-        %li= link_to 'acts', admin_acts_path
-        %li.divider-vertical
-        %li= link_to 'event participations', admin_event_participations_path
+        %li.dropdown
+          = link_to admin_root_path(:anchor => 'calendar'), 'data-target' => '#', :class => 'dropdown-toggle', 'data-toggle' => 'dropdown' do
+            calendar
+            %b.caret
+          %ul.dropdown-menu{ :role => 'menu', 'aria-labelledby' => 'dLabel' }
+            %li= link_to 'events', admin_events_path
+            %li= link_to 'acts', admin_acts_path
+            %li= link_to 'event participations', admin_event_participations_path
 
       %ul.nav.pull-right
         %li
