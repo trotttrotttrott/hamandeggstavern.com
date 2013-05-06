@@ -21,3 +21,5 @@
       %td= link_to 'Show', admin_event_participation_path(event_participation)
       %td= link_to 'Edit', edit_admin_event_participation_path(event_participation)
       %td= link_to 'Destroy', admin_event_participation_path(event_participation), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+= paginate @event_participations

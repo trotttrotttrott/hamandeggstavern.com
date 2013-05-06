@@ -21,3 +21,5 @@
       %td= link_to 'Show', admin_act_path(act)
       %td= link_to 'Edit', edit_admin_act_path(act)
       %td= link_to 'Destroy', admin_act_path(act), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+= paginate @acts
