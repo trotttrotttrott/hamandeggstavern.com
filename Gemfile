@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+gem 'pg'
 gem 'rails'
 gem 'devise'
 gem 'haml'
@@ -22,7 +23,6 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'mysql2'
   gem 'ffaker'
   gem 'debugger'
   gem 'rspec-rails'
@@ -31,8 +31,4 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'spork'
-end
-
-group :production do
-  gem 'pg' # heroku
 end
