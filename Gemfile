@@ -30,5 +30,4 @@ group :development, :test do
   gem 'capybara-webkit'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
-  gem 'spork'
 end
