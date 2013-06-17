@@ -1,7 +1,9 @@
 class Event < ActiveRecord::Base
-  attr_accessible :name, :start, :finish, :words
+  attr_accessible :name, :start, :finish, :words, :participations_attributes
   has_many :participations, :class_name => 'EventParticipation', :dependent => :destroy
   default_scope order('start asc')
+
+  accepts_nested_attributes_for :participations, :reject_if => :participation_exists?
 
   def participations
     super.by_rank
@@ -33,5 +35,11 @@ class Event < ActiveRecord::Base
 
   def verbose
     "#{name} - #{date}"
+  end
+
+  private
+
+  def participation_exists?(attrs)
+    participations.map(&:act_id).include?(attrs[:act_id].to_i)
   end
 end
