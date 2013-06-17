@@ -10,5 +10,6 @@
 
   %body
     .container
+      = render :partial => 'layouts/admin/flash', :locals => { :flash => flash }
       = render 'layouts/admin/north'
       #central=yield
