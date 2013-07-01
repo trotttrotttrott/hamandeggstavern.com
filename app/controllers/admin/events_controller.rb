@@ -1,6 +1,7 @@
 class Admin::EventsController < Admin::BaseController
 
   def index
+    params[:page] ||= (Event.where('start <= ?', Date.today).count / Event.default_per_page) + 1
     @events = Event.page(params[:page])
   end
 

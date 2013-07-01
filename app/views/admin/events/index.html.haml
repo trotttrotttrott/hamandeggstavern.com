@@ -1,6 +1,7 @@
 %h1
   %span events
   = link_to 'New', new_admin_event_path, :class => 'btn btn-primary btn-mini'
+  %small.muted= page_entries_info @events
 
 = paginate @events
 
@@ -17,7 +18,7 @@
     %th
 
   - @events.each do |event|
-    %tr
+    %tr{ :class => ('muted' if event.past?) }
       %td= event.name
       %td= event.start.strftime('%c')
       %td= event.finish.strftime('%c')
