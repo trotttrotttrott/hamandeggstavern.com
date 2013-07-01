@@ -4,6 +4,7 @@
   ul {
 
     li {
+      @include user-select('none');
       display: inline-block;
       vertical-align: top;
       background: #000;
