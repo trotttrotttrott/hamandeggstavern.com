@@ -59,7 +59,7 @@ class Admin::BeersController < Admin::BaseController
     @beer.destroy
 
     respond_to do |format|
-      format.html { redirect_to beers_url }
+      format.html { redirect_to admin_beers_path }
       format.json { head :ok }
     end
   end
