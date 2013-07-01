@@ -1,6 +1,6 @@
 class MailChimpService < BaseService
 
-  LIST_ID ||= ENV['MAILCHIMP_PATRON_LIST_ID']
+  LIST_ID = ENV['MAILCHIMP_PATRON_LIST_ID']
 
   def self.list_subscribe(patron)
     begin

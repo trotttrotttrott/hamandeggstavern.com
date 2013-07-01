@@ -2,7 +2,7 @@ require 'http_agent'
 
 class FacebookService < BaseService
 
-  USER ||= ENV['INTEGRATION_FACEBOOK_USER']
+  USER = ENV['INTEGRATION_FACEBOOK_USER']
 
   def initialize
     base_uri = 'https://graph.facebook.com'
