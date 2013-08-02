@@ -1,6 +1,7 @@
 %h1
   %span acts
   = link_to 'New', new_admin_act_path, :class => 'btn btn-primary btn-mini'
+  %small.muted= page_entries_info @acts
 
 = paginate @acts
 
