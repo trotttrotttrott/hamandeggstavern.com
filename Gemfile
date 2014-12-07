@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.1.1'
 
 gem 'pg'
 gem 'rails'
@@ -8,7 +8,7 @@ gem 'devise'
 gem 'haml'
 gem 'haml-rails'
 gem 'jquery-rails'
-gem 'puma'
+gem 'unicorn'
 gem 'foreman'
 gem 'gibbon' # mail chimp api wrapper
 gem 'chronic' # easy datetime
@@ -26,7 +26,7 @@ end
 
 group :development, :test do
   gem 'ffaker'
-  gem 'debugger'
+  gem 'pry-debugger'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'capybara-webkit'
