@@ -20,7 +20,7 @@ class Admin::EventsController < Admin::BaseController
   end
 
   def create
-    @event = Event.create(params[:event])
+    @event = Event.create(event_params)
     if @event.persisted?
       redirect_to admin_events_path, notice: 'Event was successfully created.'
     else
@@ -31,7 +31,7 @@ class Admin::EventsController < Admin::BaseController
 
   def update
     @event = Event.find(params[:id])
-    if @event.update_attributes(params[:event])
+    if @event.update_attributes(event_params)
       redirect_to admin_events_path, notice: 'Event was successfully updated.'
     else
       @acts = Act.all
@@ -43,5 +43,9 @@ class Admin::EventsController < Admin::BaseController
     @event = Event.find(params[:id])
     @event.destroy
     redirect_to admin_events_url
+  end
+
+  def event_params
+    params.require(:event).permit!
   end
 end

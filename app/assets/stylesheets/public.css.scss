@@ -30,7 +30,7 @@ button, input, textarea, select {
 }
 
 body {
-  background: asset-url('layouts/public/wallpaper.png', image) center top;
+  background: asset-url('layouts/public/wallpaper.png') center top;
 }
 
 button, input[type=submit] {

@@ -27,7 +27,7 @@ class Admin::BeersController < Admin::BaseController
   end
 
   def create
-    @beer = Beer.new(params[:beer])
+    @beer = Beer.new(beer_params)
 
     respond_to do |format|
       if @beer.save
@@ -44,7 +44,7 @@ class Admin::BeersController < Admin::BaseController
     @beer = Beer.find(params[:id])
 
     respond_to do |format|
-      if @beer.update_attributes(params[:beer])
+      if @beer.update_attributes(beer_params)
         format.html { redirect_to admin_beer_path(@beer), notice: 'Beer was successfully updated.' }
         format.json { head :ok }
       else
@@ -62,5 +62,11 @@ class Admin::BeersController < Admin::BaseController
       format.html { redirect_to admin_beers_path }
       format.json { head :ok }
     end
+  end
+
+  private
+
+  def beer_params
+    params.require(:beer).permit!
   end
 end

@@ -1,7 +1,8 @@
 class Event < ActiveRecord::Base
-  attr_accessible :name, :start, :finish, :words, :participations_attributes
+
   has_many :participations, :class_name => 'EventParticipation', :dependent => :destroy
-  default_scope order('start asc')
+
+  default_scope { order('start asc') }
 
   accepts_nested_attributes_for :participations, :reject_if => :participation_exists?
 

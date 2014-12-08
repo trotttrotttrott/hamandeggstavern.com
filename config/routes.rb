@@ -19,6 +19,6 @@ HamAndEggs::Application.routes.draw do
   end
 
   namespace :web_hook do
-    match :mail_chimp, :to => 'mail_chimp#receiver'
+    post :mail_chimp, :to => 'mail_chimp#receiver'
   end
 end

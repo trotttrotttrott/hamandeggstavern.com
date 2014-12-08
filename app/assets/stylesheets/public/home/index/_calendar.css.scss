@@ -21,11 +21,11 @@
         background: #333 no-repeat center;
 
         &.past {
-          background-image: asset-url('public/home/index/minus.png', image);
+          background-image: asset-url('public/home/index/minus.png');
         }
 
         &.future {
-          background-image: asset-url('public/home/index/plus.png', image);
+          background-image: asset-url('public/home/index/plus.png');
         }
 
         &:hover {

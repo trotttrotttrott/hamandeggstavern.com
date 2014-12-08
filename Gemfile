@@ -2,8 +2,8 @@ source 'http://rubygems.org'
 
 ruby '2.1.1'
 
-gem 'pg'
 gem 'rails'
+gem 'pg'
 gem 'devise'
 gem 'haml'
 gem 'haml-rails'
@@ -15,7 +15,8 @@ gem 'chronic' # easy datetime
 gem 'kaminari' # pagination
 
 group :assets do
-  gem 'sprockets'
+  gem 'sprockets', '2.11.0' # 2.12.x is broken
+  gem 'sprockets-rails'
   gem 'sass-rails'
   gem 'compass_twitter_bootstrap'
   gem 'compass-rails'

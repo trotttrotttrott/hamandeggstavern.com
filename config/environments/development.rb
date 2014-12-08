@@ -30,4 +30,9 @@ HamAndEggs::Application.configure do
 
   # Devise needs this
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  # Loads all registered config.eager_load_namespaces.
+  # This includes your application, engines,
+  # Rails frameworks and any other registered namespace.
+  config.eager_load = false
 end

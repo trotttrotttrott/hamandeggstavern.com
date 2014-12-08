@@ -6,12 +6,18 @@ class Public::HomeController < Public::BaseController
   end
 
   def create
-    @patron = Patron.new(params[:patron])
+    @patron = Patron.new(patron_params)
     status = @patron.save ? 200 : 406
     if request.xhr?
       render :partial => 'public/home/index/form', :status => status
     else
       render :index
     end
+  end
+
+  private
+
+  def patron_params
+    params.require(:patron).permit(:email)
   end
 end

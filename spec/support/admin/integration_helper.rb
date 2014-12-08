@@ -8,16 +8,14 @@ module RSpec
             fill_in 'admin_email', :with => admin.email
             fill_in 'admin_password', :with => admin.password
           end
-          click_button('Sign in')
+          click_button('Log in')
           page.should have_text('GOHAM')
         end
       end
     end
     if ::Rails.env.test?
       RSpec.configure do |config|
-        config.with_options example_group: { file_path: /\bspec\/features\/admin\// } do |integration|
-          integration.include IntegrationHelpers::RoleAuth
-        end
+        config.include IntegrationHelpers::RoleAuth, file_path: /\bspec\/features\/admin\//
       end
     end
   end

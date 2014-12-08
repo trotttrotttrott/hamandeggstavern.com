@@ -17,7 +17,7 @@ class Admin::ActsController < Admin::BaseController
   end
 
   def create
-    @act = Act.new(params[:act])
+    @act = Act.new(act_params)
     if @act.save
       redirect_to admin_acts_path, notice: 'Act was successfully created.'
     else
@@ -27,7 +27,7 @@ class Admin::ActsController < Admin::BaseController
 
   def update
     @act = Act.find(params[:id])
-    if @act.update_attributes(params[:act])
+    if @act.update_attributes(act_params)
       redirect_to admin_acts_path, notice: 'Act was successfully updated.'
     else
       render action: 'edit'
@@ -38,5 +38,11 @@ class Admin::ActsController < Admin::BaseController
     @act = Act.find(params[:id])
     @act.destroy
     redirect_to admin_acts_path
+  end
+
+  private
+
+  def act_params
+    params.require(:act).permit!
   end
 end
