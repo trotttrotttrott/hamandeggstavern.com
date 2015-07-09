@@ -27,7 +27,7 @@ end
 
 group :development, :test do
   gem 'ffaker'
-  gem 'pry-debugger'
+  gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'capybara-webkit'
