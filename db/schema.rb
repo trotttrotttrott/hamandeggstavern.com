@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130428224936) do
+ActiveRecord::Schema.define(version: 20150709204210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20130428224936) do
   create_table "acts", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "url"
   end
 
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 20130428224936) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 20130428224936) do
   create_table "beer_classifications", force: true do |t|
     t.string   "name"
     t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "beers", force: true do |t|
@@ -56,40 +56,38 @@ ActiveRecord::Schema.define(version: 20130428224936) do
     t.string   "image"
     t.integer  "producer_id"
     t.integer  "beer_classification_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "event_participations", force: true do |t|
     t.integer  "event_id"
     t.integer  "act_id"
     t.integer  "act_rank"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "events", force: true do |t|
     t.string   "name"
-    t.datetime "start"
-    t.datetime "finish"
-    t.string   "words"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "age_restriction", default: "21 +"
+    t.date     "date"
+    t.text     "words"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "integrations", force: true do |t|
     t.integer  "admin_id"
     t.string   "token"
     t.string   "type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "patrons", force: true do |t|
     t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
     t.string   "first_name"
     t.string   "last_name"
     t.datetime "mail_list_subscribe_posted_at"
@@ -99,8 +97,8 @@ ActiveRecord::Schema.define(version: 20130428224936) do
   create_table "producers", force: true do |t|
     t.string   "name"
     t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "wines", force: true do |t|
@@ -110,8 +108,8 @@ ActiveRecord::Schema.define(version: 20130428224936) do
     t.integer  "points"
     t.string   "image"
     t.integer  "producer_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
 end

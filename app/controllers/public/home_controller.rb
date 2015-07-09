@@ -2,7 +2,7 @@ class Public::HomeController < Public::BaseController
 
   def index
     @patron = Patron.new
-    @events = Event.where "start > :start", :start => 2.weeks.ago
+    @events = Event.where "date > :date", :date => 2.weeks.ago
   end
 
   def create

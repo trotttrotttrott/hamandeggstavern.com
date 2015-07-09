@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
 
   has_many :participations, :class_name => 'EventParticipation', :dependent => :destroy
 
-  default_scope { order('start asc') }
+  default_scope { order('date asc') }
 
   accepts_nested_attributes_for :participations, :reject_if => :participation_exists?
 
@@ -10,32 +10,24 @@ class Event < ActiveRecord::Base
     super.by_rank
   end
 
-  def date
-    start.strftime '%m/%d/%Y'
+  def date_formatted
+    date.strftime '%m/%d/%Y'
   end
 
   def day
-    start.strftime '%d'
+    date.strftime '%d'
   end
 
   def month
-    start.strftime '%B'
+    date.strftime '%B'
   end
 
   def year
-    start.strftime '\'%y'
-  end
-
-  def time
-    "#{start.strftime '%l'} - #{finish.strftime '%l%P'}"
+    date.strftime '\'%y'
   end
 
   def past?
-    start.to_date.past?
-  end
-
-  def verbose
-    "#{name} - #{date}"
+    date.to_date.past?
   end
 
   private

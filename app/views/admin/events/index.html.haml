@@ -8,11 +8,8 @@
 %table.table
   %tr
     %th Name
-    %th From
-    %th To
+    %th Date
     %th Words
-    %th Age Restriction
-    %th Acts
     %th
     %th
     %th
@@ -20,15 +17,8 @@
   - @events.each do |event|
     %tr{ :class => ('muted' if event.past?) }
       %td= event.name
-      %td= event.start.strftime('%c')
-      %td= event.finish.strftime('%c')
+      %td= event.date_formatted
       %td= event.words
-      %td= event.age_restriction
-      %td
-        - if event.participations.any?
-          %ul.unstyled
-            - event.participations.by_rank.each do |event_participation|
-              %li= event_participation.act.name
       %td= link_to 'Show', admin_event_path(event)
       %td= link_to 'Edit', edit_admin_event_path(event)
       %td= link_to 'Destroy', admin_event_path(event), :method => :delete, :data => { :confirm => 'Are you sure?' }

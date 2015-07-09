@@ -8,42 +8,11 @@
 .field
   = f.label :name
   = f.text_field :name, :autofocus => true
-
-.field#event_participations
-  = label_tag 'Acts'
-  %select{ :id => 'select_acts' }
-    %option
-    = options_for_select(@acts.map { |act| [act.name, act.id] })
-  = link_to 'Add act to event', '#add_act_to_event', 'data-stop' => true, :id => 'add_act_to_event'
-  #act_ids
-    -# first-child is template for js
-    = hidden_field_tag 'event[participations_attributes][][act_id]'
-    - @event.participations.each do |participation|
-      = hidden_field_tag 'event[participations_attributes][][act_id]', participation.act_id
-  %ul#acts
-    -# first-child is template for js
-    %li
-      %span
-      .icon-remove
-    - @event.participations.each do |participation|
-      %li{ 'data-act-id' => participation.act_id }
-        %span=participation.act.name
-        = link_to '', admin_event_participation_path(participation), :class => 'icon-remove', :method => :delete, :remote => true
-
 .field
-  = f.label :start
-  = f.datetime_select :start, :default => Chronic.parse('today at 9:00pm')
-.field
-  = f.label :finish
-  = f.datetime_select :finish, :default => Chronic.parse('tomorrow at 2:00am')
+  = f.label :date
+  = f.date_select :date, :default => Chronic.parse('today')
 .field
   = f.label :words
-  = f.text_field :words, :class => 'span12', :maxlength => 255, :placeholder => 'For stuff like "No cover", or "Smell my finger"'
-.field
-  = f.label :age_restriction
-  = f.text_field :age_restriction, :maxlength => 255
+  = f.text_area :words, :class => 'span12'
 .actions
   = f.submit 'Save'
-
-  :coffee
-    Ham.start 'Events::Form::EventParticipations', el: $('#event_participations')
