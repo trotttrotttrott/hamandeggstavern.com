@@ -1,5 +1,7 @@
 # Ham and Eggs
 
+[![Build Status](https://travis-ci.org/trotttrotttrott/hamandeggstavern.com.svg)](https://travis-ci.org/trotttrotttrott/hamandeggstavern.com)
+
 #### Getting started
 
 1. Clone the repo
