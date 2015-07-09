@@ -1,9 +1,6 @@
 %h1
   %span events
   = link_to 'New', new_admin_event_path, :class => 'btn btn-primary btn-mini'
-  %small.muted= page_entries_info @events
-
-= paginate @events
 
 %table.table
   %tr
@@ -24,5 +21,3 @@
       %td= link_to 'Show', admin_event_path(event)
       %td= link_to 'Edit', edit_admin_event_path(event)
       %td= link_to 'Destroy', admin_event_path(event), :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-= paginate @events
