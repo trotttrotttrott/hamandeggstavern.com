@@ -9,106 +9,109 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130428224936) do
+ActiveRecord::Schema.define(version: 20130428224936) do
 
-  create_table "acts", :force => true do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "acts", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "url"
   end
 
-  create_table "admins", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+  create_table "admins", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
+    t.integer  "sign_in_count",          default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
-  add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
-  create_table "beer_classifications", :force => true do |t|
+  create_table "beer_classifications", force: true do |t|
     t.string   "name"
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "beers", :force => true do |t|
+  create_table "beers", force: true do |t|
     t.string   "name"
     t.string   "description"
     t.float    "percentage_of_alcohol"
     t.string   "image"
     t.integer  "producer_id"
     t.integer  "beer_classification_id"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "event_participations", :force => true do |t|
+  create_table "event_participations", force: true do |t|
     t.integer  "event_id"
     t.integer  "act_id"
     t.integer  "act_rank"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "events", :force => true do |t|
+  create_table "events", force: true do |t|
     t.string   "name"
     t.datetime "start"
     t.datetime "finish"
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
     t.string   "words"
-    t.string   "age_restriction", :default => "21 +"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "age_restriction", default: "21 +"
   end
 
-  create_table "integrations", :force => true do |t|
+  create_table "integrations", force: true do |t|
     t.integer  "admin_id"
     t.string   "token"
     t.string   "type"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "patrons", :force => true do |t|
+  create_table "patrons", force: true do |t|
     t.string   "email"
-    t.datetime "created_at",                                       :null => false
-    t.datetime "updated_at",                                       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "first_name"
     t.string   "last_name"
     t.datetime "mail_list_subscribe_posted_at"
-    t.boolean  "mail_is_subscribed",            :default => false
+    t.boolean  "mail_is_subscribed",            default: false
   end
 
-  create_table "producers", :force => true do |t|
+  create_table "producers", force: true do |t|
     t.string   "name"
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "wines", :force => true do |t|
+  create_table "wines", force: true do |t|
     t.string   "name"
     t.string   "description"
     t.float    "percentage_of_alcohol"
     t.integer  "points"
     t.string   "image"
     t.integer  "producer_id"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
