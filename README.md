@@ -58,21 +58,21 @@ git push heroku_prod master
 
 #### Database backups
 
-[PG Backups](https://devcenter.heroku.com/articles/pgbackups) is a Heroku add-on that "...lets you easily capture and manage backups for your Heroku Postgres databases".
+[Heroku PGBackups](https://devcenter.heroku.com/articles/heroku-postgres-backups)
 
 List backups
 ```
-heroku pgbackups
+heroku pg:backups
 ```
 
 Create backup
 ```
-heroku pgbackups:capture
+heroku pg:backups capture
 ```
 
 Download the latest backup
 ```
-curl -o hamandeggs.dump `heroku pgbackups:url --app hamandeggs`
+curl -o hamandeggs.dump `heroku pg:backups public-url`
 ```
 
 Load dump file into your local Postgres database (update or remove `-U myuser`)
