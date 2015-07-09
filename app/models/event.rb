@@ -6,6 +6,8 @@ class Event < ActiveRecord::Base
 
   accepts_nested_attributes_for :participations, :reject_if => :participation_exists?
 
+  validates :date, uniqueness: true
+
   def participations
     super.by_rank
   end
