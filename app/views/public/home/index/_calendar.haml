@@ -1,13 +1,6 @@
 #calendar
-  .section_heading Events
-  %ul
-    %li.cntrl.past
-    - @events.each_with_index do |event, index|
-      %li{ event_attrs(event, index) }
-        .day= event.day
-        .month_year
-          %span= event.month
-          %span= event.year
-        .name= event.name
-        .words= simple_format event.words
-    %li.cntrl.future
+  - @events.each do |event|
+    %div
+      .name= event.name
+      .words= simple_format event.words
+      .date= event.date_formatted
