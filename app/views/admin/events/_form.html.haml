@@ -12,6 +12,9 @@
   = f.label :date
   = f.date_select :date, :default => Chronic.parse('today')
 .field
+  = f.label :price
+  = f.text_field :price
+.field
   = f.label :words
   = f.text_area :words, :class => 'span12'
 .actions

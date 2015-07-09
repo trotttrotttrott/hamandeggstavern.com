@@ -9,6 +9,7 @@
   %tr
     %th Name
     %th Date
+    %th Price
     %th Words
     %th
     %th
@@ -18,6 +19,7 @@
     %tr{ :class => ('muted' if event.past?) }
       %td= event.name
       %td= event.date_formatted
+      %td= event.price
       %td= event.words
       %td= link_to 'Show', admin_event_path(event)
       %td= link_to 'Edit', edit_admin_event_path(event)
