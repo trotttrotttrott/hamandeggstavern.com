@@ -3,5 +3,6 @@
 /tmp/**/*
 /tmp/*
 /coverage/*
+/public/uploads/*
 .DS_Store
 .env

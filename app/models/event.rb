@@ -8,6 +8,8 @@ class Event < ActiveRecord::Base
 
   validates :date, uniqueness: true
 
+  mount_uploader :poster, PosterUploader
+
   def participations
     super.by_rank
   end

@@ -13,6 +13,9 @@ gem 'foreman'
 gem 'gibbon' # mail chimp api wrapper
 gem 'chronic' # easy datetime
 gem 'kaminari' # pagination
+gem 'carrierwave' # image uploads
+gem 'fog' # s3 for carrierwave
+gem 'mini_magick'
 
 group :assets do
   gem 'sprockets', '2.11.0' # 2.12.x is broken
@@ -33,6 +36,7 @@ group :development, :test do
   gem 'capybara-webkit'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'dotenv-rails', :groups => [:development, :test]
 end
 
 group :production do

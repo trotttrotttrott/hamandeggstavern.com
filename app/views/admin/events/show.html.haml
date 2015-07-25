@@ -13,6 +13,10 @@
   %b Words:
   = @event.words
 
+%p
+  %b Poster:
+  = image_tag @event.poster.url
+
 = link_to 'Edit', edit_admin_event_path(@event)
 \|
 = link_to 'Back', admin_events_path
