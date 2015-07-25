@@ -91,8 +91,9 @@ describe WebHook::MailChimpController do
           INTERESTS: "Group1,Group2",
         },
         ip_opt: "10.20.10.30",
-        campaign_id: "cb398d21d2",
-        reason: "hard" } }
+        campaign_id: "cb398d21d2"
+      }
+    }
 
     get :receiver, unsubscribe_params
 
