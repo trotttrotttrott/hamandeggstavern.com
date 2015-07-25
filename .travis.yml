@@ -6,4 +6,4 @@ before_script:
   - cp config/database.travis.yml config/database.yml
 script:
   - RAILS_ENV=test rake db:migrate --trace
-  - rake
+  - xvfb-run rspec
