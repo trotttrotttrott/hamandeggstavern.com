@@ -1,8 +1,12 @@
 #calendar {
-  margin: 200px 0;
+  text-align: left;
 
   & > div {
     margin: 100px 0;
+  }
+
+  .poster {
+    text-align: right;
   }
 
   .name, .words {

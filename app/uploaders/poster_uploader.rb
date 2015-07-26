@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class PosterUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::MiniMagick
@@ -12,6 +10,10 @@ class PosterUploader < CarrierWave::Uploader::Base
 
   version :thumb do
     process :resize_to_fit => [50, 50]
+  end
+
+  version :home do
+    process :resize_to_fit => [300, 300]
   end
 
   def extension_white_list
