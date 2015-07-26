@@ -15,7 +15,8 @@
 
 %p
   %b Poster:
-  = image_tag @event.poster.url
+  %a{ href: @event.poster.url, target: '_blank' }
+    = image_tag @event.poster.thumb.url
 
 = link_to 'Edit', edit_admin_event_path(@event)
 \|
