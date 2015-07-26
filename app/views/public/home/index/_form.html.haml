@@ -1,12 +1,15 @@
 #form
-  = form_for @patron, :url => patrons_path, :method => :post, :remote => true, :html => { :id => 'new_patron' } do |f|
+
+  = form_for @patron, :url => patrons_path, :method => :post, :remote => true, :html => { :id => 'new_patron', :class => 'form-inline' } do |f|
+
     .notice
       - if @patron.persisted?
         Thanks! We look forward to seeing you.
-    %table
-      %tr
-        %td= f.text_field :email, :placeholder => 'Email address', :autofocus => true, :value => (@patron.persisted? ? '' : @patron.email)
-        %td= f.submit 'Send'
+
+    .form-group
+      = f.text_field :email, :autofocus => true, :placeholder => 'Email Address', :value => (@patron.persisted? ? '' : @patron.email), :class => 'form-control'
+      %button{ :type => 'submit', :class => 'btn btn-default' } Submit
+
     = validation_errors @patron
 
   #loader
