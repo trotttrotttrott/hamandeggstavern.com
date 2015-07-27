@@ -10,13 +10,22 @@
   }
 
   .name, .words {
+    font-family: 'Miniver';
+  }
+
+  .name {
     font-size: 50px;
     line-height: 80px;
-    font-family: 'Miniver';
+  }
+
+  .words {
+    font-size: 40px;
+    line-height: 60px;
   }
 
   .date {
     font-size: 30px;
+    margin-top: 2px;
   }
 
   .price {
