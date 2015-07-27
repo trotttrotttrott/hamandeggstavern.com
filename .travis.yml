@@ -1,6 +1,9 @@
 language: ruby
 rvm:
   - "2.2.0"
+env:
+  - S3_KEY=s3key
+  - S3_SECRET=s3secret
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
   - cp config/database.travis.yml config/database.yml
