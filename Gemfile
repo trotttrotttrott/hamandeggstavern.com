@@ -36,9 +36,7 @@ group :development, :test do
   gem 'capybara-webkit'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
-  gem 'dotenv-rails', :groups => [:development, :test]
+  gem 'dotenv-rails'
 end
 
-group :production do
-  gem 'rails_12factor'
-end
+gem 'rails_12factor', :groups => [:staging, :production]
