@@ -1,15 +1,19 @@
 #form
 
+  .h
+    = image_tag "public/home/index/hammy_bullet.png"
+    %span H&amp;E Mailing List
+    = image_tag "public/home/index/hammy_bullet.png"
+
   = form_for @patron, :url => patrons_path, :method => :post, :remote => true, :html => { :id => 'new_patron', :class => 'form-inline' } do |f|
 
-    .notice
-      - if @patron.persisted?
-        Thanks! We look forward to seeing you.
-
     .form-group
-      = f.text_field :email, :autofocus => true, :placeholder => 'Email Address', :value => (@patron.persisted? ? '' : @patron.email), :class => 'form-control'
+      = f.text_field :email, :placeholder => 'Email Address', :value => (@patron.persisted? ? '' : @patron.email), :class => 'form-control'
       %button{ :type => 'submit', :class => 'btn btn-default' } Submit
 
     = validation_errors @patron
+
+    - if @patron.persisted?
+      .notice Thanks!
 
   #loader

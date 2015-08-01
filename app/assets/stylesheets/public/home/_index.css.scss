@@ -10,6 +10,18 @@
     }
   }
 
+  .h {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 80px;
+    font-family: 'Miniver';
+    color: #ccc;
+
+    img {
+      margin: 0 10px;
+    }
+  }
+
   @import 'index/branding';
   @import 'index/form';
   @import 'index/calendar';
