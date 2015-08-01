@@ -7,12 +7,12 @@
 
   - @events.each do |event|
     .row
-      .col-md-5.poster
+      .col-sm-5.col-md-5.poster
         - if event.poster.home.url
           = image_tag event.poster.home.url
         - else
           = image_tag "public/home/index/generic_event_poster.png", style: "border: 1px solid #ccc;"
-      .col-md-7
+      .col-sm-7.col-md-7
         .name= event.name
         .words= simple_format event.words
         .date= event.date_formatted
