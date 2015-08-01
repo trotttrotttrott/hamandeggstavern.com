@@ -25,7 +25,6 @@ group :assets do
   gem 'compass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
-  gem 'therubyracer'
 end
 
 group :development, :test do
