@@ -1,0 +1,8 @@
+#acts
+
+  .h
+    = image_tag "public/home/index/hammy_bullet.png"
+    %span Live Music Since 2012
+    = image_tag "public/home/index/hammy_bullet.png"
+
+  %div= @acts.map(&:name).join " - "

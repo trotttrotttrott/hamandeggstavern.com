@@ -3,6 +3,7 @@ class Public::HomeController < Public::BaseController
   def index
     @patron = Patron.new
     @events = Event.where('date >= ?', Date.today)
+    @acts = Act.all
   end
 
   def create
