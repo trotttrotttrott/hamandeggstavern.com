@@ -6,6 +6,6 @@ describe 'Patron provides email' do
     visit root_path
     fill_in 'patron_email', :with => 'bobfarty@smelly.org'
     click_button 'Send'
-    page.should have_content %q(Thanks! We look forward to seeing you.)
+    page.should have_content 'Thanks!'
   end
 end
