@@ -1,9 +1,9 @@
 #form
 
   .h
-    = image_tag "public/home/index/hammy_bullet.png"
+    = hammy_bullet
     %span H&amp;E Mailing List
-    = image_tag "public/home/index/hammy_bullet.png"
+    = hammy_bullet
 
   = form_for @patron, :url => patrons_path, :method => :post, :remote => true, :html => { :id => 'new_patron', :class => 'form-inline' } do |f|
 
