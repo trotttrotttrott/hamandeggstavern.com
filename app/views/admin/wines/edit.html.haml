@@ -1,0 +1,8 @@
+%h1 Editing wine
+
+= form_for @wine, :url => admin_wine_path(@wine) do |f|
+  = render :partial => 'form', :locals => { :f => f }
+
+= link_to 'Show', admin_wine_path(@wine)
+\|
+= link_to 'Back', admin_wines_path

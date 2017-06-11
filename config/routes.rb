@@ -16,6 +16,7 @@ HamAndEggs::Application.routes.draw do
     resources :event_participations, :only => [:destroy]
     resources :integrations, :only => [:index]
     resources :patrons, :only => [:index]
+    resources :wines
   end
 
   namespace :web_hook do
