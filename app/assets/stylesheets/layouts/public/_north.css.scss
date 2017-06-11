@@ -11,35 +11,12 @@
         display: block;
         background: #000;
 
-        &.twitter {
-          padding: 17px 10px 16px;
-        }
-
-        &.facebook {
-          padding: 13px;
-        }
-
         &.yelp {
           padding: 10px 12px 10px 14px;
         }
 
-        &.twitter, &.facebook {
-          margin-right: 10px;
-        }
-
         &:hover {
-
-          &.twitter {
-            padding: 27px 10px 16px;
-          }
-
-          &.facebook {
-            padding: 23px 13px 13px;
-          }
-
-          &.yelp {
-            padding: 20px 12px 10px 14px;
-          }
+          background: #666;
         }
       }
     }
