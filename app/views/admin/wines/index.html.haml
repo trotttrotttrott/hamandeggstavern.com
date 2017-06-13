@@ -6,6 +6,7 @@
   %tr
     %th Name
     %th Description
+    %th Rank
     %th
     %th
     %th
@@ -13,6 +14,7 @@
     %tr
       %td= wine.name
       %td= wine.description
+      %td= wine.rank
       %td= link_to 'Show', admin_wine_path(wine)
       %td= link_to 'Edit', edit_admin_wine_path(wine)
       %td= link_to 'Destroy', admin_wine_path(wine), confirm: 'Are you sure?', method: :delete

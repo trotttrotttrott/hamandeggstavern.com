@@ -6,6 +6,12 @@
   %b Description:
   = @beer.description
 %p
+  %b Can:
+  = @beer.is_can
+%p
+  %b Draft:
+  = @beer.is_draft
+%p
   %b Percentage of Alcohol:
   = @beer.percentage_of_alcohol
 = link_to 'Edit', edit_admin_beer_path(@beer)

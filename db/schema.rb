@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150725054036) do
+ActiveRecord::Schema.define(version: 20170613211312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,9 @@ ActiveRecord::Schema.define(version: 20150725054036) do
     t.integer  "beer_classification_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "rank"
+    t.boolean  "is_draft"
+    t.boolean  "is_can"
   end
 
   create_table "event_participations", force: true do |t|
@@ -112,6 +115,7 @@ ActiveRecord::Schema.define(version: 20150725054036) do
     t.integer  "producer_id"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.integer  "rank"
   end
 
 end
