@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170613211312) do
+ActiveRecord::Schema.define(version: 20170614021316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,7 +60,8 @@ ActiveRecord::Schema.define(version: 20170613211312) do
     t.datetime "updated_at",             null: false
     t.integer  "rank"
     t.boolean  "is_draft"
-    t.boolean  "is_can"
+    t.boolean  "is_shit_can"
+    t.boolean  "is_craft_can"
   end
 
   create_table "event_participations", force: true do |t|
