@@ -1,0 +1,24 @@
+#beverages {
+  font-family: 'Miniver';
+
+  .h {
+    margin-bottom: 30px;
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+  }
+
+  .name {
+    font-size: 22px;
+    line-height: 40px;
+  }
+
+  .beer {
+    text-align: left;
+
+    .name:first-child {
+      text-align: right;
+    }
+  }
+}

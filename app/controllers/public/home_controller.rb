@@ -2,8 +2,12 @@ class Public::HomeController < Public::BaseController
 
   def index
     @patron = Patron.new
-    @events = Event.where('date >= ?', Date.today)
     @acts = Act.all
+    @events = Event.where('date >= ?', Date.today)
+    @wines = Wine.all
+    @shit_cans = Beer.shit_cans
+    @drafts = Beer.drafts
+    @craft_cans = Beer.craft_cans
   end
 
   def create

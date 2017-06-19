@@ -2,6 +2,11 @@
 
   = render :partial => 'public/home/index/branding'
 
+  - if @events.any?
+    = render :partial => 'public/home/index/calendar'
+
+  = render :partial => 'public/home/index/beverages'
+
   = render :partial => 'public/home/index/acts'
 
   = render :partial => 'public/home/index/form'

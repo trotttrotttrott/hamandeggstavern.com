@@ -16,4 +16,16 @@ class Beer < ActiveRecord::Base
       errors.add(:is_craft_can, "can't be craft if also shit")
     end
   end
+
+  def self.shit_cans
+    where is_shit_can: true
+  end
+
+  def self.drafts
+    where is_draft: true
+  end
+
+  def self.craft_cans
+    where is_craft_can: true
+  end
 end
