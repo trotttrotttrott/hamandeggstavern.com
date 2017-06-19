@@ -8,6 +8,12 @@ class Beer < ActiveRecord::Base
   has_one :producer
   belongs_to :producer
 
+  PRICES = {
+    shit_can: ENV["SHIT_CAN_PRICE"],
+    draft: ENV["DRAFT_PRICE"],
+    craft_can: ENV["CRAFT_CAN_PRICE"]
+  }
+
   validate :cannot_be_shit_and_craft_can
 
   def cannot_be_shit_and_craft_can

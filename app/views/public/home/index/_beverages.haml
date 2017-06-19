@@ -4,23 +4,23 @@
 
     .h
       = hammy_bullet
-      %span Wine
+      %span Wine $#{@wine_price}
       = hammy_bullet
 
     - @wines.each do |wine|
       .name= wine.name
 
-  - { "Shit Cans" => @shit_cans,
-      "Drafts" => @drafts,
-      "Craft Cans" => @craft_cans }.each do |title, beers|
+  - { "Shit Cans" => [@shit_cans, @shit_can_price],
+      "Drafts" => [@drafts, @draft_price],
+      "Craft Cans" => [@craft_cans, @craft_can_price] }.each do |title, beers|
 
-    - if beers.any?
+    - if beers[0].any?
       .h
         = hammy_bullet
-        %span= title
+        %span= "#{title} $#{beers[1]}"
         = hammy_bullet
 
-      - beers.each_slice(2) do |slice|
+      - beers[0].each_slice(2) do |slice|
         .row.beer
           - slice.each do |beer|
             .col-sm-6.col-md-6.name= beer.name
