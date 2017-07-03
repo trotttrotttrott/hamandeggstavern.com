@@ -4,7 +4,7 @@
 
     .h
       = hammy_bullet
-      %span Wine $#{@wine_price}
+      %span Wine
       = hammy_bullet
 
     - @wines.each do |wine|
@@ -17,7 +17,7 @@
     - if beers[0].any?
       .h
         = hammy_bullet
-        %span= "#{title} $#{beers[1]}"
+        %span= title
         = hammy_bullet
 
       - beers[0].each_slice(2) do |slice|
