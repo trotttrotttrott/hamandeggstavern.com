@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/trotttrotttrott/hamandeggstavern.com.svg)](https://travis-ci.org/trotttrotttrott/hamandeggstavern.com)
 
-#### Getting started
+## Getting started
 
 1. Clone the repo
 ```
@@ -36,13 +36,13 @@ foreman start
 
 1. Go to http://0.0.0.0:5000
 
-#### Running tests
+## Running tests
 
 ```
 rake
 ```
 
-#### Deployment
+## Deployment
 
 Heroku!
 
@@ -58,7 +58,9 @@ git push heroku_staging master
 git push heroku_prod master
 ```
 
-#### Database backups
+## Operations
+
+### Database Backups
 
 [Heroku PGBackups](https://devcenter.heroku.com/articles/heroku-postgres-backups)
 
@@ -80,4 +82,10 @@ curl -o hamandeggs.dump `heroku pg:backups public-url`
 Load dump file into your local Postgres database (update or remove `-U myuser`)
 ```
 pg_restore --verbose --clean --no-acl --no-owner -h localhost -U myuser -d ham_and_eggs_development hamandeggs.dump
+```
+
+### Rails Console
+
+```
+heroku run rails console
 ```
