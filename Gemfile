@@ -18,7 +18,7 @@ gem 'fog' # s3 for carrierwave
 gem 'mini_magick'
 
 group :assets do
-  gem 'sprockets', '2.11.0' # 2.12.x is broken
+  gem 'sprockets', '2.12.5' # 2.12.x is broken
   gem 'sprockets-rails'
   gem 'sass-rails'
   gem 'compass_twitter_bootstrap'
