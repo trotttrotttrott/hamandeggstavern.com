@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 ruby '2.6.6'
 
 gem 'rails'
-gem 'pg'
+gem 'pg', '~> 0.15'
 gem 'devise'
 gem 'haml'
 gem 'haml-rails'
